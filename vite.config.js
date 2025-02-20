@@ -5,13 +5,13 @@ import injectHTML from 'vite-plugin-html-inject';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/goit-js-hw-12/', // Добавляем base
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
     build: {
       sourcemap: true,
-
       rollupOptions: {
         input: glob.sync('./src/*.html'),
         output: {
